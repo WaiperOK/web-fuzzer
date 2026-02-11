@@ -1,26 +1,21 @@
-# Fuzzing Tool
+# web-fuzzer
 
-## Overview
+Controlled HTTP form fuzzing utility for security testing in authorized environments.
 
-This fuzzing tool is designed to generate random input data and send it to a specified URL to test applications for vulnerabilities. It helps identify potential weaknesses in how applications handle unexpected or malformed input.
+## What changed in v0.2.0
 
-## Features
+- moved from single script to package structure
+- added CLI arguments for request count, payload length, timeout, and output mode
+- added deterministic unit tests
+- added GitHub Actions CI
 
-- Generates random strings with a mix of letters, digits, and punctuation.
-- Sends a specified number of requests to the target URL.
-- Allows customization of the parameter name to fuzz.
-- Displays status codes for each request to help identify potential issues.
+## Usage
 
-## Requirements
+```bash
+python -m pip install -e .
+web-fuzzer --url https://example.org/form --requests 10 --param username --json
+```
 
-- Python 3.x
-- `requests` library
+## Safety note
 
-## Installation
-
-1. Ensure you have Python installed. You can download it from [python.org](https://www.python.org/).
-
-2. Install the required `requests` library:
-
-   ```bash
-   pip install requests
+Use only on systems you own or where you have explicit permission.
